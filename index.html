@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Google Sheets Product Search&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #f4f4f4;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>input[type="text"] {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 300px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #ccc;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>select {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-left: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #ccc;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.product-card {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.product-img {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 120px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-height: 120px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-right: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>object-fit: contain;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.product-info {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.product-title {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.2em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.product-price {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #007bff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Modal styles */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.modal {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 9999;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow: auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: rgba(0, 0, 0, 0.7);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.modal-content {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #fefefe;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 50px auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 90%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 700px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>#modalImg {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>#modalDesc {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 45%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>white-space: pre-wrap;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.close {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #aaa;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>right: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.close:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: black;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 700px) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.modal-content {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>#modalImg,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>#modalDesc {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>max-width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Product Search&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="text" id="searchInput" placeholder="Search products..." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;select id="searchColumn"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="all"&gt;All Columns&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="product_title"&gt;Title&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="price"&gt;Price&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="currency"&gt;Currency&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="description"&gt;Description&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;option value="specifications_raw"&gt;Specifications&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="productList"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Modal --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="productModal" class="modal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="close" id="modalClose"&gt;&amp;times;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="modal-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;img id="modalImg" src="" alt="Product Image" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="modalDesc"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const SHEET_ID = 'YOUR_SHEET_ID'; // Replace with your Google Sheet ID</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const API_KEY = 'YOUR_API_KEY'; <span class="Apple-converted-space">  </span>// Replace with your Google Sheets API key</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const SHEET_NAME = 'products_details'; // Your sheet name</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const productList = document.getElementById('productList');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const searchInput = document.getElementById('searchInput');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const searchColumn = document.getElementById('searchColumn');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const modal = document.getElementById('productModal');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const modalImg = document.getElementById('modalImg');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const modalDesc = document.getElementById('modalDesc');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const modalClose = document.getElementById('modalClose');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>let allProducts = [];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>async function fetchProducts() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_NAME}?key=${API_KEY}`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const res = await fetch(url);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!res.ok) throw new Error('Failed to fetch data');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const data = await res.json();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// data.values is array of arrays; first row = headers</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const headers = data.values[0];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const rows = data.values.slice(1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>allProducts = rows.map(row =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>return headers.reduce((obj, header, idx) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>obj[header] = row[idx] || '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return obj;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}, {});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>displayProducts(allProducts);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} catch (err) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>productList.innerHTML = '&lt;p&gt;Error loading products. Please check API key and Sheet ID.&lt;/p&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>console.error(err);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Display products in list</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function displayProducts(products) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (products.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>productList.innerHTML = '&lt;p&gt;No products found.&lt;/p&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>productList.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>products.forEach(prod =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const card = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>card.className = 'product-card';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>card.dataset.image = prod.Image_url;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>card.dataset.description = prod.description;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const img = document.createElement('img');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>img.className = 'product-img';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>img.src = prod.Image_url || '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>img.alt = prod.product_title;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>img.onerror = () =&gt; { img.src = ''; img.alt = 'No image'; };</p>
+<p class="p1"><span class="Apple-converted-space">        </span>card.appendChild(img);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const info = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>info.className = 'product-info';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const title = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title.className = 'product-title';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>title.textContent = prod.product_title;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>info.appendChild(title);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const price = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>price.className = 'product-price';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>price.textContent = (prod.price &amp;&amp; prod.currency) ? `${prod.price} ${prod.currency}` : '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>info.appendChild(price);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>card.appendChild(info);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Open modal on image click</p>
+<p class="p1"><span class="Apple-converted-space">        </span>img.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>modalImg.src = prod.Image_url || '';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>modalDesc.textContent = prod.description || 'No description available.';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>modal.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>productList.appendChild(card);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Filter products based on search and column</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function filterProducts() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const query = searchInput.value.trim().toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const column = searchColumn.value;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (!query) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>displayProducts(allProducts);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const filtered = allProducts.filter(prod =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (column === 'all') {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>return Object.values(prod).some(val =&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>(val || '').toLowerCase().includes(query)</p>
+<p class="p1"><span class="Apple-converted-space">          </span>);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const val = prod[column] || '';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>return val.toLowerCase().includes(query);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>displayProducts(filtered);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>searchInput.addEventListener('input', filterProducts);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>searchColumn.addEventListener('change', filterProducts);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>modalClose.onclick = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>modal.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>window.onclick = (event) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (event.target === modal) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>modal.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Load products on page load</p>
+<p class="p1"><span class="Apple-converted-space">    </span>fetchProducts();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
